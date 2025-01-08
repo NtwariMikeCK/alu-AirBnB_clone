@@ -2,6 +2,7 @@
 import json
 from models.base_model import BaseModel
 
+
 class FileStorage:
     """Handles storage of BaseModel instances"""
 
