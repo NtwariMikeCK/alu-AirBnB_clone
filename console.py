@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import cmd
+"""This is custom CLI designed to handle all our airbnb operations"""
 
 
 class HBNBCommand(cmd.Cmd):
