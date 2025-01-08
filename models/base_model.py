@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 import uuid
 from datetime import datetime
 # from models import storage
+
 
 class BaseModel:
     """BaseModel class that defines common attributes/methods"""
@@ -24,12 +24,14 @@ class BaseModel:
 
     def __str__(self):
         """String representation of the instance"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(
+            self.__class__.__name__, self.id, self.__dict__
+        )
 
     def save(self):
         """Updates `updated_at` with the current datetime"""
         self.updated_at = datetime.now()
-        from models import storage 
+        from models import storage  # Import inside method
         storage.save()  # Save to JSON file
 
     def to_dict(self):
