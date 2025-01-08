@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 import unittest
 from models import storage
 from models.base_model import BaseModel
@@ -21,7 +21,6 @@ class TestBaseModelSaveReload(unittest.TestCase):
         saved_obj = storage.all()[key]
         self.assertEqual(saved_obj.name, "My_First_Model")
         self.assertEqual(saved_obj.my_number, 89)
-
 
 if __name__ == '__main__':
     unittest.main()
