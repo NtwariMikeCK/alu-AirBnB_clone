@@ -9,7 +9,6 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """This a custom command prompt"""
-
     prompt = "(hbnb)"
 
     def do_quit(self, arg):

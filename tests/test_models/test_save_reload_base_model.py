@@ -6,19 +6,17 @@ from models.base_model import BaseModel
 
 
 class TestBaseModelSaveReload(unittest.TestCase):
-    
+    """This is used to test for most of the things"""
     def setUp(self):
         """Set up test environment"""
         if os.path.exists("file.json"):
             os.remove("file.json")
         storage._FileStorage__objects = {}
-    
+
     def tearDown(self):
         """Clean up test environment"""
         if os.path.exists("file.json"):
             os.remove("file.json")
-
-
 
     def test_save_reload(self):
         # Load existing objects from file.json
