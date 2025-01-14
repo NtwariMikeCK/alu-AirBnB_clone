@@ -5,7 +5,7 @@ this a custom cli created to work on our airbnb clone project
 import cmd
 from models import storage
 from models.base_model import BaseModel
-from practice4 import User
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
