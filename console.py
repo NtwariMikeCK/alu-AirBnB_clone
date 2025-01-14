@@ -2,16 +2,15 @@
 """
 this a custom cli created to work on our airbnb clone project
 """
-
-
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from practice4 import User
 
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for HBNB"""
-    prompt = "(hbnb) "
+    prompt = "(hbnb)"
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -31,31 +30,52 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
             return
-        if arg != "BaseModel":
+        
+        # if arg != "BaseModel" and arg != "User":
+        if arg not in ("BaseModel", "User"):
             print("** class doesn't exist **")
             return
-        obj = BaseModel()
-        obj.save()
-        print(obj.id)
+        
+        if arg == "User":
+            obj = User()
+            obj.save()
+            print(obj.id)
+        else:
+            obj = BaseModel()
+            obj.save()
+            print(obj.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an
-            instance based on class name and id"""
+        """Prints the string representation of an instance based on class name and id"""
         args = arg.split()
         if not args:
             print("** class name missing **")
             return
-        if args[0] != "BaseModel":
+        
+        if args[0] not in ("BaseModel", "User"):
             print("** class doesn't exist **")
             return
+        
         if len(args) < 2:
             print("** instance id missing **")
             return
-        key = f"BaseModel.{args[1]}"
-        if key not in storage.all():
-            print("** no instance found **")
+        
+        # Create the key to look up an instance
+        key = f"{args[0]}.{args[1]}"
+        data = storage.reload()
+        
+        if data is None:
+            print("** no data found **")
             return
-        print(storage.all()[key])
+        # Check if instance is present in storage
+        if key not in data:
+            print("** no instance found **")
+        else:
+            print("** Your Data **")
+            print(data[key])
+                    
+
+
 
     def do_destroy(self, arg):
         """Deletes an instance based on class name and id"""
@@ -63,41 +83,45 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print("** class name missing **")
             return
-        if args[0] != "BaseModel":
+        if args[0] not in ('BaseModel', 'User'):
             print("** class doesn't exist **")
             return
+        
         if len(args) < 2:
             print("** instance id missing **")
             return
-        key = f"BaseModel.{args[1]}"
-        if key not in storage.all():
-            print("** no instance found **")
-            return
-        del storage.all()[key]
-        storage.save()
+        # Create the key to remove it
+        key = f"{args[0]}.{args[1]}"
+        # we need to call storage.delete()
+        storage.delete(key)
+
 
     def do_all(self, arg):
-        """Prints all string representations of all instances"""
-        if arg and arg != "BaseModel":
+        """Prints all string representations of all instances
+          based or not on class name"""
+        if arg and arg not in ("BaseModel", "User"):
             print("** class doesn't exist **")
-            return
-        print([str(obj) for obj in storage.all().values()])
+        else:
+            print([str(obj) for obj in storage.reload().values()])
+
 
     def do_update(self, arg):
-        """Updates an instance based on class name and id
+        """Updates an instance based on class name and id 
         by adding/updating attributes"""
         args = arg.split()
         if not args:
             print("** class name missing **")
             return
-        if args[0] != "BaseModel":
+        if args[0] not in ('BaseModel', 'User'):
             print("** class doesn't exist **")
             return
+        
         if len(args) < 2:
             print("** instance id missing **")
             return
-        key = f"BaseModel.{args[1]}"
-        if key not in storage.all():
+        
+        key = f"{args[0]}.{args[1]}"
+        if key not in storage.reload().keys():
             print("** no instance found **")
             return
         if len(args) < 3:
