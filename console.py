@@ -2,10 +2,12 @@
 """
 this a custom cli created to work on our airbnb clone project
 """
+
 import cmd
 from models import storage
+
 from models.base_model import BaseModel
-from models.user import User
+from practice4 import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -62,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
         
         # Create the key to look up an instance
         key = f"{args[0]}.{args[1]}"
-        data = storage.reload()
+        data = storage.all()
         
         if data is None:
             print("** no data found **")
@@ -102,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
         if arg and arg not in ("BaseModel", "User"):
             print("** class doesn't exist **")
         else:
-            print([str(obj) for obj in storage.reload().values()])
+            print([str(obj) for obj in storage.all().values()])
 
 
     def do_update(self, arg):
@@ -121,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
             return
         
         key = f"{args[0]}.{args[1]}"
-        if key not in storage.reload().keys():
+        if key not in storage.all().keys():
             print("** no instance found **")
             return
         if len(args) < 3:
