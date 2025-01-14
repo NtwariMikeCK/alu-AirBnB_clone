@@ -71,8 +71,8 @@ class HBNBCommand(cmd.Cmd):
         # Check if instance is present in storage
         if key not in data:
             print("** no instance found **")
-        else:
-            print("OK")
+        # else:
+            # print("OK")
             # print("** Your Data **")
             # print(data[key])
                     
