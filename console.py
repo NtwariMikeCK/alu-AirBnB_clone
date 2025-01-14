@@ -72,8 +72,9 @@ class HBNBCommand(cmd.Cmd):
         if key not in data:
             print("** no instance found **")
         else:
-            print("** Your Data **")
-            print(data[key])
+            print("OK")
+            # print("** Your Data **")
+            # print(data[key])
                     
 
 
