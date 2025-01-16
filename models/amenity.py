@@ -4,5 +4,5 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-  """ This is a class responsible for the state"""
-  name = ""
+    """ This is a class responsible for the state"""
+    name = ""
