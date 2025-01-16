@@ -1,8 +1,67 @@
 {
-    "BaseModel.94c40415-e94d-4d98-988d-f41a649a4107": {
-        "id": "94c40415-e94d-4d98-988d-f41a649a4107",
-        "created_at": "2025-01-15T02:10:12.245888",
-        "updated_at": "2025-01-15T02:10:12.246097",
+    "BaseModel.aa9c98b8-14a8-466d-8321-af8187578c59": {
+        "id": "aa9c98b8-14a8-466d-8321-af8187578c59",
+        "created_at": "2025-01-15T10:57:18.568832",
+        "updated_at": "2025-01-15T10:57:18.568832",
+        "first_name": "Mike",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
         "__class__": "BaseModel"
+    },
+    "BaseModel.8981e629-1d18-46e3-b1c8-41b465fa0218": {
+        "id": "8981e629-1d18-46e3-b1c8-41b465fa0218",
+        "created_at": "2025-01-15T10:58:58.739177",
+        "updated_at": "2025-01-15T10:58:58.739177",
+        "first_name": "Mike",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.1338dfb5-6fc7-4c6f-aec8-0ae17bcf5c43": {
+        "id": "1338dfb5-6fc7-4c6f-aec8-0ae17bcf5c43",
+        "created_at": "2025-01-15T10:59:28.333219",
+        "updated_at": "2025-01-15T10:59:28.333219",
+        "first_name": "Mike",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.9146bfae-f3d6-43f5-bef5-96f23b59aae8": {
+        "id": "9146bfae-f3d6-43f5-bef5-96f23b59aae8",
+        "created_at": "2025-01-15T10:59:47.522166",
+        "updated_at": "2025-01-15T10:59:47.522166",
+        "first_name": "Mike",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.3b748a32-8da2-4227-b831-34a072a9d269": {
+        "id": "3b748a32-8da2-4227-b831-34a072a9d269",
+        "created_at": "2025-01-15T11:00:21.608731",
+        "updated_at": "2025-01-15T11:00:21.609732",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.1c6a6a70-654a-4744-9add-5222949097ba": {
+        "id": "1c6a6a70-654a-4744-9add-5222949097ba",
+        "created_at": "2025-01-16T15:30:33.676026",
+        "updated_at": "2025-01-16T15:30:33.676249",
+        "__class__": "BaseModel"
+    },
+    "Review.650029be-4e48-4db7-96b3-fba12bec5426": {
+        "id": "650029be-4e48-4db7-96b3-fba12bec5426",
+        "created_at": "2025-01-16T15:59:34.597426",
+        "updated_at": "2025-01-16T15:59:34.597426",
+        "name": "Kevin",
+        "__class__": "Review"
+    },
+    "City.ebf0f3bc-7742-41f6-82eb-2da9e2373f62": {
+        "id": "ebf0f3bc-7742-41f6-82eb-2da9e2373f62",
+        "created_at": "2025-01-16T16:41:04.814590",
+        "updated_at": "2025-01-16T16:41:04.814636",
+        "__class__": "City"
     }
 }
